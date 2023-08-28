@@ -23,6 +23,7 @@ def index(request):
     return HttpResponse("123")
 
 
+# 找到html页面——读取文件——按照HTTP协议回复
 def login(request):
     return render(request, 'login.html')
 
