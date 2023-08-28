@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# 即上两个目录应该是project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'xhy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR/'templates'], # 以BASE_DIR为基础添加路径
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
