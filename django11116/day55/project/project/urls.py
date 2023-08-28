@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.http import HttpResponse
+from django.shortcuts import HttpResponse, render
 
 
 # request是来自client的res信息，作为参数接收
@@ -23,8 +23,13 @@ def index(request):
     return HttpResponse("123")
 
 
+def login(request):
+    return render(request, 'login.html')
+
+
 # 这个list记录所有关于url的目标进入函数
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^index/', index)
+    url(r'^index/', index),
+    url(r'^login/', login)
 ]
